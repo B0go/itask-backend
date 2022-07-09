@@ -17,7 +17,7 @@ Expected request body:
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description",
-        "completedAt" : false
+        "completed" : false
     }
 ```
 
@@ -28,7 +28,7 @@ Response body:
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description",
-        "completedAt" : false
+        "completed" : false
     }
 ```
 
@@ -55,14 +55,14 @@ Expected request body:
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description1",
-        "completedAt" : true
+        "completed" : true
     },
         {
         "title": "task's title2",
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description2",
-        "completedAt" : false
+        "completed" : false
     }
 ```
 
@@ -74,14 +74,14 @@ Expected response:
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description1",
-        "completedAt" : true
+        "completed" : true
     },
         {
         "title": "task's title2",
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description2",
-        "completedAt" : false
+        "completed" : false
     }
 ```
 
@@ -129,7 +129,7 @@ Expected response body:
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description",
-        "completedAt" : false
+        "completed" : false
     }
 ```
 
@@ -158,14 +158,14 @@ Expected response body:
         "creation": "2020-01-09",
         "dueDate": "2022-08-09",
         "description": "description1",
-        "completedAt" : true
+        "completed" : true
     },
         {
         "title": "task's title2",
         "creation": "2021-03-09",
         "dueDate": "2022-08-09",
         "description": "description2",
-        "completedAt" : false
+        "completed" : false
     }
 ``` 
 
