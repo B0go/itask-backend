@@ -1,4 +1,4 @@
-# iTask backend API Docs
+# iTask backend API Docs - task
 
 ## Create a task
 
@@ -13,22 +13,22 @@ Path: `/tasks/{uuid}`
 Expected request body:
 ```json
     {
-        "titulo": "titulo da task",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao",
-        "completada" : false
+        "title": "task's title",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description",
+        "completedAt" : false
     }
 ```
 
 Response body:
 ```json
     {
-        "titulo": "titulo da task",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao",
-        "completada" : false
+        "title": "task's title",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description",
+        "completedAt" : false
     }
 ```
 
@@ -51,18 +51,18 @@ Path: `/tasks`
 Expected request body:
 ```json
     {
-        "titulo": "titulo da task1",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao1",
-        "completada" : true
+        "title": "task's title1",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description1",
+        "completedAt" : true
     },
         {
-        "titulo": "titulo da task2",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao2",
-        "completada" : false
+        "title": "task's title2",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description2",
+        "completedAt" : false
     }
 ```
 
@@ -70,18 +70,18 @@ Expected response:
 
 ```json
     {
-        "titulo": "titulo da task1",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao1",
-        "completada" : true
+        "title": "task's title1",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description1",
+        "completedAt" : true
     },
         {
-        "titulo": "titulo da task2",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao2",
-        "completada" : false
+        "title": "task's title2",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description2",
+        "completedAt" : false
     }
 ```
 
@@ -125,11 +125,11 @@ No request body is expected for this request
 Expected response body:
 ```json
     {
-        "titulo": "titulo da task",
-        "dataCriacao": "2022-07-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao",
-        "completada" : false
+        "title": "task's title",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description",
+        "completedAt" : false
     }
 ```
 
@@ -154,18 +154,18 @@ No request body is expected for this request
 Expected response body:
 ```json
     {
-        "titulo": "titulo da task1",
-        "dataCriacao": "2020-01-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao1",
-        "completada" : true
+        "title": "task's title1",
+        "creation": "2020-01-09",
+        "dueDate": "2022-08-09",
+        "description": "description1",
+        "completedAt" : true
     },
         {
-        "titulo": "titulo da task2",
-        "dataCriacao": "2021-03-09",
-        "dataPrazo": "2022-08-09",
-        "descricao": "descricao2",
-        "completada" : false
+        "title": "task's title2",
+        "creation": "2021-03-09",
+        "dueDate": "2022-08-09",
+        "description": "description2",
+        "completedAt" : false
     }
 ``` 
 
