@@ -38,6 +38,7 @@ Response codes:
 
 `500 Internal Server Error` in case of any error
 
+
 ## Create a list of tasks
 
 This is the API request used to create more then one task in the same time
@@ -51,13 +52,15 @@ Path: `/tasks`
 Expected request body:
 ```json
     {
+        "uuid": "d9ddfe27-9be4-403f-89a9-ff031fef4291",
         "title": "task's title1",
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
         "description": "description1",
         "completed" : true
     },
-        {
+    {
+        "uuid": "51159c4c-88a6-4171-8d12-7a19bd89a559",
         "title": "task's title2",
         "creation": "2022-07-09",
         "dueDate": "2022-08-09",
@@ -172,5 +175,7 @@ Expected response body:
 Response codes:
 
 `200 OK` in case of success
+
+`404 Not Found` in case the task is not found
 
 `500 Internal Server Error` in case of any error
