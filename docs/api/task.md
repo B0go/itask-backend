@@ -1,5 +1,44 @@
 # iTask backend API Docs - task
 
+## Create a task
+
+This is the API request used to create a new task.
+
+### Specification
+
+Method: `HTTP PUT`
+
+Path: `/tasks/{uuid}`
+
+Expected request body:
+```json
+    {
+        "title": "task's title",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description",
+        "completed" : false
+    }
+```
+
+Response body:
+```json
+    {
+        "title": "task's title",
+        "creation": "2022-07-09",
+        "dueDate": "2022-08-09",
+        "description": "description",
+        "completed" : false
+    }
+```
+
+Response codes:
+
+`201 Created` in case of success
+
+`500 Internal Server Error` in case of any error
+
+
 ## Create a list of tasks
 
 This is the API request used to create more then one task in the same time
@@ -136,5 +175,7 @@ Expected response body:
 Response codes:
 
 `200 OK` in case of success
+
+`404 Not Found` in case the task is not found
 
 `500 Internal Server Error` in case of any error
