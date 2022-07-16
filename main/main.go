@@ -4,23 +4,22 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/B0go/itask-backend/config"
+	"github.com/B0go/itask-backend/main/db"
 	"github.com/B0go/itask-backend/model"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
-	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 func main() {
-	dsn := "user=itask_app dbname=itask sslmode=disable"
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		panic("failed to connect database")
-	}
 
-	// Migrate the schema
-	db.AutoMigrate(&model.Task{})
+	cfg, _ := config.LoadConfig()
+
+	db := db.Database{Cfg: cfg}
+	db.MustConnect()
+	db.MustMigrate()
 
 	r := gin.Default()
 
@@ -37,7 +36,7 @@ func main() {
 			return
 		}
 
-		if err := db.Create(&task).Error; err != nil {
+		if err := db.Db.Create(&task).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err})
 			return
 		}
@@ -52,7 +51,7 @@ func main() {
 			return
 		}
 
-		if err := db.Create(&tasks).Error; err != nil {
+		if err := db.Db.Create(&tasks).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err})
 			return
 		}
@@ -64,7 +63,7 @@ func main() {
 		var task model.Task
 		task.Uuid = c.Param("uuid")
 
-		if err := db.Delete(&task).Error; err != nil {
+		if err := db.Db.Delete(&task).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err})
 			return
 		}
@@ -74,7 +73,7 @@ func main() {
 
 	r.GET("/tasks/:uuid", func(c *gin.Context) {
 		var task model.Task
-		if err := db.First(&task, "uuid = ?", c.Param("uuid")).Error; err != nil {
+		if err := db.Db.First(&task, "uuid = ?", c.Param("uuid")).Error; err != nil {
 			if errors.Is(err, gorm.ErrRecordNotFound) {
 				c.Status(http.StatusNotFound)
 			} else {
