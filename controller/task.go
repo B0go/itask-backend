@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/B0go/itask-backend/main/db"
+	"github.com/B0go/itask-backend/db"
 	"github.com/B0go/itask-backend/model"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
